@@ -11,14 +11,20 @@ public class MoodAnalyser {
 
 	// method to return mood happy or sad
 	public String moodAnalyser(String mood) {
-		if (message.contains("sad")) {
-			return ("sad");
-		} else if (message.contains("Any")) {
+		try {
+			if (message.contains("sad")) {
+				return ("sad");
+			} else if (message.contains("happy")) {
+				return ("happy");
+			}
+		} catch (NullPointerException e) {
 			return ("happy");
 		}
+
 		return (mood);
 	}
 
+	// parameterized constructor
 	public MoodAnalyser(String message) {
 
 		this.message = message;
